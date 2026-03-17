@@ -1,13 +1,14 @@
 // AI Engineering Roadmap - Service Worker
-const CACHE_NAME = 'ai-eng-roadmap-v1';
+const CACHE_NAME = 'ai-eng-roadmap-v2';
 
+// Use relative paths for GitHub Pages subdirectory hosting
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/app.js',
-  '/data/curriculum.js',
-  '/manifest.json'
+  './',
+  './index.html',
+  './styles.css',
+  './app.js',
+  './data/curriculum.js',
+  './manifest.json'
 ];
 
 // Install
