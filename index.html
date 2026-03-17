@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>AI Engineering Roadmap</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header id="header">
+      <button id="back-btn" class="header-btn hidden" aria-label="Go back">←</button>
+      <h1 id="header-title">AI Engineering</h1>
+      <button id="progress-btn" class="header-btn" aria-label="View progress">📊</button>
+    </header>
+
+    <!-- Main content area -->
+    <main id="main-content">
+      <!-- Dashboard view -->
+      <div id="dashboard-view" class="view active">
+        <div class="hero">
+          <h2>6-Month Roadmap</h2>
+          <p>From zero to hireable AI engineer</p>
+          <div id="overall-progress" class="progress-ring-container">
+            <svg class="progress-ring" width="120" height="120">
+              <circle class="progress-ring-bg" cx="60" cy="60" r="52"/>
+              <circle class="progress-ring-fill" cx="60" cy="60" r="52"/>
+            </svg>
+            <span class="progress-text">0%</span>
+          </div>
+        </div>
+        <div id="months-grid" class="months-grid"></div>
+      </div>
+
+      <!-- Month view -->
+      <div id="month-view" class="view">
+        <div id="month-header" class="section-header"></div>
+        <div id="sections-list" class="sections-list"></div>
+      </div>
+
+      <!-- Topic view -->
+      <div id="topic-view" class="view">
+        <div id="topic-content" class="topic-content"></div>
+      </div>
+
+      <!-- Quiz view -->
+      <div id="quiz-view" class="view">
+        <div id="quiz-content" class="quiz-content"></div>
+      </div>
+
+      <!-- Progress modal -->
+      <div id="progress-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>Your Progress</h2>
+          <div id="progress-details"></div>
+          <button id="close-progress" class="btn-primary">Close</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="data/curriculum.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
